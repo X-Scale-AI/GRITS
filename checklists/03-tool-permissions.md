@@ -21,8 +21,8 @@ Every "no" means your agent can do things you did not explicitly approve. A prom
 ## How to fix it
 
 See the GRITS 5-Layer Zero-Trust Hardening Guide, Layer 3 (Application Boundary):
-https://github.com/rizviz/GRITS/blob/main/apply/openclaw/hardening-baseline.md#layer-3-application-boundary
+https://github.com/X-Scale-AI/GRITS/blob/main/apply/openclaw/hardening-baseline.md#layer-3-application-boundary
 
 ---
 
-Scored with GRITS by xScaleAI | https://github.com/rizviz/GRITS
+Scored with GRITS by X Scale AI | https://github.com/X-Scale-AI/GRITS

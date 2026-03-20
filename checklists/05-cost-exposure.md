@@ -31,8 +31,8 @@ Quick math for a typical always-on OpenClaw agent:
 ## How to fix it
 
 See the GRITS 5-Layer Zero-Trust Hardening Guide, Layer 5 (Financial Boundary):
-https://github.com/rizviz/GRITS/blob/main/apply/openclaw/hardening-baseline.md#layer-5-financial-boundary
+https://github.com/X-Scale-AI/GRITS/blob/main/apply/openclaw/hardening-baseline.md#layer-5-financial-boundary
 
 ---
 
-Scored with GRITS by xScaleAI | https://github.com/rizviz/GRITS
+Scored with GRITS by X Scale AI | https://github.com/X-Scale-AI/GRITS

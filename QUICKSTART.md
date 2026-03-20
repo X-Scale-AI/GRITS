@@ -5,7 +5,7 @@ Score your agent's security in 5 minutes. Harden it in 15.
 ## Prerequisites
 
 ```bash
-git clone https://github.com/xscaleai/GRITS.git
+git clone https://github.com/X-Scale-AI/GRITS.git
 cd GRITS
 pip install -r requirements.txt
 ```

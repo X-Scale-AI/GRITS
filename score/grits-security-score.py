@@ -13,7 +13,7 @@ import sys
 import yaml
 from datetime import datetime
 
-VERSION = "0.1.0"
+VERSION = "0.2.0"
 
 # Control map: check_key -> (control_id, layer, severity, title)
 AGENT_CONTROLS = {

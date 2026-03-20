@@ -21,8 +21,8 @@ If you set up your agent using a guide that said "paste the Telegram BotFather t
 ## How to fix it
 
 See the GRITS 5-Layer Zero-Trust Hardening Guide, Layer 2 (Operator Boundary):
-https://github.com/rizviz/GRITS/blob/main/apply/openclaw/hardening-baseline.md#layer-2-operator-boundary
+https://github.com/X-Scale-AI/GRITS/blob/main/apply/openclaw/hardening-baseline.md#layer-2-operator-boundary
 
 ---
 
-Scored with GRITS by xScaleAI | https://github.com/rizviz/GRITS
+Scored with GRITS by X Scale AI | https://github.com/X-Scale-AI/GRITS

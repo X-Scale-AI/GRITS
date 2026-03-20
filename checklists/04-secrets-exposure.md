@@ -21,11 +21,11 @@ Every "no" means your API keys are one exploit away from exfiltration. If the ag
 ## How to fix it
 
 See the GRITS 5-Layer Zero-Trust Hardening Guide, Layer 4 (OS and Secrets Boundary):
-https://github.com/rizviz/GRITS/blob/main/apply/openclaw/hardening-baseline.md#layer-4-os-and-secrets-boundary
+https://github.com/X-Scale-AI/GRITS/blob/main/apply/openclaw/hardening-baseline.md#layer-4-os-and-secrets-boundary
 
 For automated secret isolation using tmpfs and age encryption:
-https://github.com/rizviz/GRITS/tree/main/tools
+https://github.com/X-Scale-AI/GRITS/tree/main/tools
 
 ---
 
-Scored with GRITS by xScaleAI | https://github.com/rizviz/GRITS
+Scored with GRITS by X Scale AI | https://github.com/X-Scale-AI/GRITS

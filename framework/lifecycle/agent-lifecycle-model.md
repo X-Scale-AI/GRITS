@@ -43,4 +43,4 @@ If recertification lapses, the agent should transition to Restricted until revie
 
 The open specification above defines the vocabulary and rules for lifecycle governance. Enterprise teams managing fleets of agents require additional capabilities including automated state transition enforcement, fleet-wide recertification tracking, orphan agent detection, trust decay modeling, and integration with enterprise identity and change management systems.
 
-Enterprise lifecycle implementation guidance and tooling are available through xScaleAI: https://www.xscaleai.com
+Enterprise lifecycle implementation guidance and tooling are available through X Scale AI: https://www.xscaleai.com

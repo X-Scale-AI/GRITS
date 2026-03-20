@@ -18,7 +18,7 @@ GRITS defines an open, implementable framework for security and lifecycle govern
 - Implementation over abstraction: every concept has a corresponding artifact, script, or template
 - Deny-by-default over permissive: agents should have the minimum access required
 - Evidence over assertions: governance claims must be backed by measurable posture
-- Open vocabulary, commercial implementation: the framework is open, enterprise tooling is available via xScaleAI
+- Open vocabulary, commercial implementation: the framework is open, enterprise tooling is available via X Scale AI
 
 ## What GRITS is not
 

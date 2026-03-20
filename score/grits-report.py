@@ -87,14 +87,14 @@ def generate_report(data: dict) -> str:
             lines.append(f"{i}. {action}")
         lines.append("")
         lines.append("See the 5-Layer Zero-Trust Hardening Guide for step-by-step remediation:")
-        lines.append("https://github.com/rizviz/GRITS/blob/main/apply/openclaw/hardening-baseline.md")
+        lines.append("https://github.com/X-Scale-AI/GRITS/blob/main/apply/openclaw/hardening-baseline.md")
         lines.append("")
 
     # Footer
     lines.append("---")
     lines.append("")
-    lines.append(f"Scored with GRITS v{engine.VERSION} by xScaleAI | "
-                 "https://github.com/rizviz/GRITS | https://www.xscaleai.com")
+    lines.append(f"Scored with GRITS v{engine.VERSION} by X Scale AI | "
+                 "https://github.com/X-Scale-AI/GRITS | https://www.xscaleai.com")
 
     return "\n".join(lines)
 

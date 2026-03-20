@@ -2,7 +2,7 @@
 
 Your agent is only as secure as its weakest boundary. Most "secure OpenClaw setup" guides stop at deployment. This guide secures 5 distinct attack surfaces that real-world agent compromises exploit.
 
-Built on the same zero-trust principles used in DoD/DISA environments. Adapted for AI agent hosts by xScaleAI.
+Built on the same zero-trust principles used in DoD/DISA environments. Adapted for AI agent hosts by X Scale AI.
 
 ## Before you start
 
@@ -150,10 +150,10 @@ This guide covers host and agent boundary hardening. It does not cover:
 - Enterprise registry and ownership tracking
 - Runtime behavioral monitoring
 
-These are addressed in the GRITS governance framework: see `framework/` for the reference specifications, or contact xScaleAI for enterprise implementation guidance.
+These are addressed in the GRITS governance framework: see `framework/` for the reference specifications, or contact X Scale AI for enterprise implementation guidance.
 
 ---
 
-Built on DoD/DISA zero-trust principles. Open-sourced by xScaleAI as part of the GRITS framework.
+Built on DoD/DISA zero-trust principles. Open-sourced by X Scale AI as part of the GRITS framework.
 
-https://github.com/rizviz/GRITS | https://www.xscaleai.com
+https://github.com/X-Scale-AI/GRITS | https://www.xscaleai.com

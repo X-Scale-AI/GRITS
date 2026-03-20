@@ -36,7 +36,7 @@ Findings:
 - [CRITICAL] SEC-001: Secrets isolated from agent filesystem
 ...
 
-Scored with GRITS v0.1.0 by xScaleAI
+Scored with GRITS v0.1.0 by X Scale AI
 ```
 
 ## Who this is for
@@ -117,7 +117,7 @@ Most "secure your agent" guides tell you to paste a Telegram token and ask the b
 
 GRITS is built on 5 governance pillars: Governance, Risk, Integrity, Trust, and Security. The control catalog, lifecycle model, and scoring methodology in `framework/` provide the reference specification for teams governing agents at enterprise scale.
 
-For enterprise lifecycle management, fleet governance, and AI Agent SOC capabilities, contact xScaleAI: https://www.xscaleai.com
+For enterprise lifecycle management, fleet governance, and AI Agent SOC capabilities, contact X Scale AI: https://www.xscaleai.com
 
 ## Contributing
 

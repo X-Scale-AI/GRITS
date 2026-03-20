@@ -21,11 +21,11 @@ Running 5 Mac Minis does not fix this. If all 5 have the same default network po
 ## How to fix it
 
 See the GRITS 5-Layer Zero-Trust Hardening Guide, Layer 1 (Network Boundary):
-https://github.com/rizviz/GRITS/blob/main/apply/openclaw/hardening-baseline.md#layer-1-network-boundary
+https://github.com/X-Scale-AI/GRITS/blob/main/apply/openclaw/hardening-baseline.md#layer-1-network-boundary
 
 For automated hardening scripts based on DoD/DISA standards:
-https://github.com/rizviz/GRITS/tree/main/tools
+https://github.com/X-Scale-AI/GRITS/tree/main/tools
 
 ---
 
-Scored with GRITS by xScaleAI | https://github.com/rizviz/GRITS
+Scored with GRITS by X Scale AI | https://github.com/X-Scale-AI/GRITS
