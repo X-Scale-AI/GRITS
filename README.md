@@ -41,11 +41,11 @@ Scored with GRITS v0.1.0 by xScaleAI
 
 ## Who this is for
 
-**You run an OpenClaw or NemoClaw agent** and want to know if it is actually secure. Most setup guides skip real security. GRITS does not.
-
-**You are building AI agents or LLM apps** and want a clear, practical security standard that does not require reading 200-page PDFs.
-
-**You lead security, platform, or AI governance** and need to understand your agent fleet's posture at scale.
+| If you are... | You probably care about... | GRITS gives you... |
+|---|---|---|
+| running OpenClaw, NemoClaw, or similar agent runtimes | hardening quickly, reducing mistakes, seeing clear gaps | deployment baselines, remediation playbooks, secure defaults, scan/score/remediate workflow |
+| building agents or LLM apps | knowing what controls apply without bureaucracy | Agent Profile, LLM App Profile, ownership rules, lifecycle model, practical defaults |
+| leading platform, governance, or security at scale | ownership, lifecycle, drift, runtime monitoring, recertification | managed-object model, Agent Lifecycle Model, transition gates, runtime signal model, scorecards |
 
 ## Quick start
 
