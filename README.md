@@ -136,4 +136,4 @@ Apache 2.0. See [LICENSE](LICENSE).
 
 ---
 
-Created by xScaleAI | https://www.xscaleai.com | https://github.com/xscaleai/GRITS
+Created by X Scale AI | https://www.xscaleai.com | https://github.com/X-Scale-AI/GRITS
