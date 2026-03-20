@@ -1,0 +1,62 @@
+# GRITS Agent Profile Template
+# Copy this file, rename it for your agent, and fill in every field.
+# Then run: python score/grits-security-score.py your-agent.yaml
+
+# ── Identity ──
+object_id:                          # unique ID for this agent (e.g., "my-openclaw-agent-01")
+name:                               # human-readable name (e.g., "Research Agent")
+owner:                              # who is accountable for this agent (e.g., your email)
+deputy_owner:                       # backup owner (or same as owner for solo operators)
+business_purpose:                   # one sentence: what does this agent do and why
+
+# ── Classification ──
+object_type: Agent
+profile_type: Agent
+autonomy_tier: 1                    # 0=passive, 1=tool-using, 2=multi-step, 3=fully autonomous
+impact_tier: 2                      # 1=experimental, 2=personal/small-team, 3=business-critical
+data_sensitivity_class: public      # public, internal, confidential, restricted
+
+# ── Runtime ──
+environment: production             # dev, test, staging, production
+runtime: openclaw                   # openclaw, nemoclaw, custom, other
+version:                            # your agent's current version or deployment date
+runtime_status: active              # active, inactive, suspended, retired
+
+# ── Tool Permissions ──
+# List ONLY the tools/plugins your agent is allowed to use.
+# If a tool is not listed here, your agent should not have access to it.
+tool_permissions:
+  - web_search
+  # - file_read
+  # - file_write
+  # - code_execution
+  # - retrieval
+  # - telegram
+  # - discord
+
+# ── Security Posture (answer honestly) ──
+checks:
+  network_egress_restricted: false          # Layer 1: outbound traffic locked to required endpoints only?
+  private_subnets_blocked: false            # Layer 1: agent cannot reach your LAN/home network?
+  management_port_protected: false          # Layer 1: agent port accessible only from your subnet/VPN?
+  operator_identity_verified: false         # Layer 2: only verified users can command the agent?
+  default_policies_rejected: false          # Layer 2: default permissive channel policies overridden?
+  tool_scope_deny_by_default: false         # Layer 3: tool policy is deny-all, allow-list only?
+  plugin_allowlist_enforced: false          # Layer 3: only declared plugins are available?
+  secrets_off_filesystem: false             # Layer 4: API keys not readable by agent process?
+  secrets_injected_at_runtime: false        # Layer 4: keys injected via systemd/docker secrets?
+  host_permissions_hardened: false          # Layer 4: file permissions restrict agent's OS access?
+  cost_guardrails_defined: false            # Layer 5: daily/monthly token or budget limits set?
+  idle_cost_minimized: false                # Layer 5: heartbeat/background routed to free/local model?
+  owner_assigned: false                     # Governance: this agent has an accountable owner?
+  monitoring_enabled: false                 # Governance: runtime logs/events are captured?
+  recertification_set: false                # Governance: next review date is scheduled?
+
+# ── Review ──
+last_review_date:                   # YYYY-MM-DD
+recertification_due:                # YYYY-MM-DD (recommended: 90 days out)
+
+# ── Cost ──
+budget_guardrails:
+  daily_token_limit:                # e.g., 250000
+  monthly_budget_usd:               # e.g., 50

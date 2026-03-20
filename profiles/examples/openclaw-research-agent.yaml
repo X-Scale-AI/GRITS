@@ -1,0 +1,48 @@
+# GRITS Agent Profile: OpenClaw Research Agent (Example)
+# This is a filled-in example. Copy agent-profile-template.yaml for your own agent.
+
+object_id: openclaw-research-01
+name: OpenClaw Research Agent
+owner: alice@example.com
+deputy_owner: alice@example.com
+business_purpose: Research and summarize public technical documentation via web search
+
+object_type: Agent
+profile_type: Agent
+autonomy_tier: 1
+impact_tier: 2
+data_sensitivity_class: public
+
+environment: production
+runtime: openclaw
+version: "0.7.x"
+runtime_status: active
+
+tool_permissions:
+  - web_search
+  - retrieval
+  - telegram
+
+checks:
+  network_egress_restricted: true
+  private_subnets_blocked: true
+  management_port_protected: true
+  operator_identity_verified: true
+  default_policies_rejected: true
+  tool_scope_deny_by_default: true
+  plugin_allowlist_enforced: true
+  secrets_off_filesystem: true
+  secrets_injected_at_runtime: true
+  host_permissions_hardened: true
+  cost_guardrails_defined: true
+  idle_cost_minimized: false
+  owner_assigned: true
+  monitoring_enabled: true
+  recertification_set: true
+
+last_review_date: "2026-03-19"
+recertification_due: "2026-06-19"
+
+budget_guardrails:
+  daily_token_limit: 250000
+  monthly_budget_usd: 50

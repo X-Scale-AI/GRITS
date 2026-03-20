@@ -1,0 +1,49 @@
+# GRITS Agent Profile: NemoClaw Development Agent (Example)
+# This is a filled-in example for a NemoClaw-based agent.
+
+object_id: nemoclaw-dev-01
+name: NemoClaw Dev Sandbox Agent
+owner: devlead@example.com
+deputy_owner: platform@example.com
+business_purpose: Internal development agent for testing tool integrations in sandboxed environment
+
+object_type: Agent
+profile_type: Agent
+autonomy_tier: 2
+impact_tier: 2
+data_sensitivity_class: internal
+
+environment: test
+runtime: nemoclaw
+version: "0.1.0"
+runtime_status: active
+
+tool_permissions:
+  - web_search
+  - file_read
+  - code_execution
+  - retrieval
+
+checks:
+  network_egress_restricted: false
+  private_subnets_blocked: false
+  management_port_protected: true
+  operator_identity_verified: false
+  default_policies_rejected: false
+  tool_scope_deny_by_default: false
+  plugin_allowlist_enforced: false
+  secrets_off_filesystem: false
+  secrets_injected_at_runtime: false
+  host_permissions_hardened: false
+  cost_guardrails_defined: true
+  idle_cost_minimized: false
+  owner_assigned: true
+  monitoring_enabled: false
+  recertification_set: false
+
+last_review_date: "2026-03-19"
+recertification_due: "2026-06-19"
+
+budget_guardrails:
+  daily_token_limit: 500000
+  monthly_budget_usd: 100

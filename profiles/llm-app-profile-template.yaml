@@ -1,0 +1,51 @@
+# GRITS LLM App Profile Template
+# For chatbots, copilots, RAG apps, and prompt wrappers that do NOT act autonomously.
+# Copy this file, rename it, fill in every field.
+# Then run: python score/grits-security-score.py your-app.yaml
+
+# ── Identity ──
+object_id:                          # unique ID (e.g., "support-copilot-01")
+name:                               # human-readable name
+owner:                              # accountable owner
+deputy_owner:                       # backup owner
+business_purpose:                   # what does this app do and why
+
+# ── Classification ──
+object_type: LLM App
+profile_type: LLM App
+autonomy_tier: 0                    # 0 for most LLM apps (user-driven, not autonomous)
+impact_tier: 2                      # 1=experimental, 2=team/internal, 3=business-critical
+data_sensitivity_class: internal    # public, internal, confidential, restricted
+
+# ── Runtime ──
+environment: production             # dev, test, staging, production
+runtime: custom                     # openclaw, nemoclaw, langchain, custom, other
+version:
+runtime_status: active
+
+# ── Tool Permissions ──
+tool_permissions:
+  - retrieval
+  # Most LLM apps only need retrieval. Add only what is required.
+
+# ── Security Posture (answer honestly) ──
+checks:
+  network_egress_restricted: false          # outbound traffic limited?
+  management_port_protected: false          # admin interface protected?
+  operator_identity_verified: false         # user authentication enforced?
+  tool_scope_deny_by_default: false         # tools restricted to declared list?
+  secrets_off_filesystem: false             # API keys not in readable files?
+  host_permissions_hardened: false          # OS-level access restricted?
+  cost_guardrails_defined: false            # spending limits set?
+  owner_assigned: false                     # accountable owner exists?
+  monitoring_enabled: false                 # usage/error logging active?
+  recertification_set: false                # review date scheduled?
+
+# ── Review ──
+last_review_date:
+recertification_due:
+
+# ── Cost ──
+budget_guardrails:
+  daily_token_limit:
+  monthly_budget_usd:
