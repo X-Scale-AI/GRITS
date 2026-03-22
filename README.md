@@ -39,8 +39,8 @@ GRITS secures 5 distinct attack surfaces:
 |---|---|
 | `framework/core/` | Control catalog (21 controls), core principles, pillar definitions |
 | `framework/lifecycle/` | Agent Lifecycle Model: states, transitions, governance gates |
-| `framework/governance/` | Governance profile templates (agent, LLM app) |
-| `profiles/` | Profile templates for scoring and compliance tracking |
+| `framework/assessment/` | Scoring methodology: control weights, posture bands, lifecycle gate thresholds |
+| `profiles/` | Profile templates with 21 checks aligned to the control catalog |
 | `docs/` | Reference implementations, compliance crosswalks, domain-specific guidance |
 
 ## The 5 GRITS Pillars

@@ -25,21 +25,27 @@ tool_permissions:
   - retrieval
 
 checks:
+  network_exposure_reviewed: false
   network_egress_restricted: false
   private_subnets_blocked: false
   management_port_protected: true
   operator_identity_verified: false
   default_policies_rejected: false
+  command_authority_allowlisted: false
   tool_scope_deny_by_default: false
   plugin_allowlist_enforced: false
+  dangerous_capabilities_scoped: false
   secrets_off_filesystem: false
   secrets_injected_at_runtime: false
   host_permissions_hardened: false
   cost_guardrails_defined: true
   idle_cost_minimized: false
+  budget_accountability_assigned: false
   owner_assigned: true
-  monitoring_enabled: false
+  deputy_owner_assigned: true
   recertification_set: false
+  monitoring_enabled: false
+  policy_violation_visibility: false
 
 last_review_date: "2026-03-19"
 recertification_due: "2026-06-19"

@@ -24,21 +24,27 @@ tool_permissions:
   - telegram
 
 checks:
+  network_exposure_reviewed: true
   network_egress_restricted: true
   private_subnets_blocked: true
   management_port_protected: true
   operator_identity_verified: true
   default_policies_rejected: true
+  command_authority_allowlisted: true
   tool_scope_deny_by_default: true
   plugin_allowlist_enforced: true
+  dangerous_capabilities_scoped: true
   secrets_off_filesystem: true
   secrets_injected_at_runtime: true
   host_permissions_hardened: true
   cost_guardrails_defined: true
   idle_cost_minimized: false
+  budget_accountability_assigned: true
   owner_assigned: true
-  monitoring_enabled: true
+  deputy_owner_assigned: false
   recertification_set: true
+  monitoring_enabled: true
+  policy_violation_visibility: false
 
 last_review_date: "2026-03-19"
 recertification_due: "2026-06-19"

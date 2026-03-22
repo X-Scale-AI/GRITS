@@ -29,17 +29,30 @@ tool_permissions:
   # Most LLM apps only need retrieval. Add only what is required.
 
 # ── Security Posture (answer honestly) ──
+# LLM apps are scored against applicable controls only. See framework/assessment/scoring-methodology.md.
 checks:
-  network_egress_restricted: false          # outbound traffic limited?
-  management_port_protected: false          # admin interface protected?
-  operator_identity_verified: false         # user authentication enforced?
-  tool_scope_deny_by_default: false         # tools restricted to declared list?
-  secrets_off_filesystem: false             # API keys not in readable files?
-  host_permissions_hardened: false          # OS-level access restricted?
-  cost_guardrails_defined: false            # spending limits set?
-  owner_assigned: false                     # accountable owner exists?
-  monitoring_enabled: false                 # usage/error logging active?
-  recertification_set: false                # review date scheduled?
+  # Layer 1: Network
+  network_exposure_reviewed: false          # NET-001: reachable services and paths documented?
+  network_egress_restricted: false          # NET-002: outbound traffic locked to required endpoints only?
+  management_port_protected: false          # NET-004: admin interface accessible only from your subnet/VPN?
+  # Layer 2: Operator
+  operator_identity_verified: false         # OPR-001: user authentication enforced?
+  # Layer 3: Application
+  tool_scope_deny_by_default: false         # APP-001: tools restricted to declared list?
+  dangerous_capabilities_scoped: false      # APP-003: file_write, code_execution disabled or scoped?
+  # Layer 4: OS and Secrets
+  secrets_off_filesystem: false             # SEC-001: API keys not in readable files?
+  secrets_injected_at_runtime: false        # SEC-002: keys injected via systemd/docker secrets?
+  host_permissions_hardened: false          # SEC-003: OS-level access restricted?
+  # Layer 5: Financial
+  cost_guardrails_defined: false            # FIN-001: spending limits set?
+  budget_accountability_assigned: false     # FIN-003: named owner responsible for API spend?
+  # Governance cross-cutting
+  owner_assigned: false                     # GOV-001: accountable owner exists?
+  deputy_owner_assigned: false              # GOV-002: backup owner assigned?
+  recertification_set: false                # GOV-003: review date scheduled (max 90 days)?
+  monitoring_enabled: false                 # GOV-004: usage/error logging active?
+  policy_violation_visibility: false        # GOV-005: policy violations can be detected and surfaced?
 
 # ── Review ──
 last_review_date:

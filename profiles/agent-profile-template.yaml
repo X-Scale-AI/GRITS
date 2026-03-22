@@ -35,22 +35,35 @@ tool_permissions:
   # - discord
 
 # ── Security Posture (answer honestly) ──
+# These 21 checks map 1:1 to the GRITS control catalog. See framework/core/control-catalog.md.
 checks:
-  network_egress_restricted: false          # Layer 1: outbound traffic locked to required endpoints only?
-  private_subnets_blocked: false            # Layer 1: agent cannot reach your LAN/home network?
-  management_port_protected: false          # Layer 1: agent port accessible only from your subnet/VPN?
-  operator_identity_verified: false         # Layer 2: only verified users can command the agent?
-  default_policies_rejected: false          # Layer 2: default permissive channel policies overridden?
-  tool_scope_deny_by_default: false         # Layer 3: tool policy is deny-all, allow-list only?
-  plugin_allowlist_enforced: false          # Layer 3: only declared plugins are available?
-  secrets_off_filesystem: false             # Layer 4: API keys not readable by agent process?
-  secrets_injected_at_runtime: false        # Layer 4: keys injected via systemd/docker secrets?
-  host_permissions_hardened: false          # Layer 4: file permissions restrict agent's OS access?
-  cost_guardrails_defined: false            # Layer 5: daily/monthly token or budget limits set?
-  idle_cost_minimized: false                # Layer 5: heartbeat/background routed to free/local model?
-  owner_assigned: false                     # Governance: this agent has an accountable owner?
-  monitoring_enabled: false                 # Governance: runtime logs/events are captured?
-  recertification_set: false                # Governance: next review date is scheduled?
+  # Layer 1: Network (NET-001 through NET-004)
+  network_exposure_reviewed: false          # NET-001: reachable services and paths documented?
+  network_egress_restricted: false          # NET-002: outbound traffic locked to required endpoints only?
+  private_subnets_blocked: false            # NET-003: agent cannot reach RFC 1918 private IP ranges?
+  management_port_protected: false          # NET-004: agent port accessible only from your subnet/VPN?
+  # Layer 2: Operator (OPR-001 through OPR-003)
+  operator_identity_verified: false         # OPR-001: only verified user IDs can command the agent?
+  default_policies_rejected: false          # OPR-002: default permissive channel policies overridden?
+  command_authority_allowlisted: false      # OPR-003: agent ignores commands from IDs not on allowlist?
+  # Layer 3: Application (APP-001 through APP-003)
+  tool_scope_deny_by_default: false         # APP-001: deny-all tool policy with explicit allowlist?
+  plugin_allowlist_enforced: false          # APP-002: only declared plugins are available?
+  dangerous_capabilities_scoped: false      # APP-003: file_write, code_execution disabled or scoped?
+  # Layer 4: OS and Secrets (SEC-001 through SEC-003)
+  secrets_off_filesystem: false             # SEC-001: API keys not readable by agent process?
+  secrets_injected_at_runtime: false        # SEC-002: keys injected via systemd/docker secrets?
+  host_permissions_hardened: false          # SEC-003: file permissions restrict agent's OS access?
+  # Layer 5: Financial (FIN-001 through FIN-003)
+  cost_guardrails_defined: false            # FIN-001: daily/monthly token or budget limits set?
+  idle_cost_minimized: false                # FIN-002: heartbeat/background routed to free/local model?
+  budget_accountability_assigned: false     # FIN-003: named owner responsible for API spend?
+  # Governance cross-cutting (GOV-001 through GOV-005)
+  owner_assigned: false                     # GOV-001: this agent has a named, accountable owner?
+  deputy_owner_assigned: false              # GOV-002: backup owner assigned for continuity?
+  recertification_set: false                # GOV-003: next review date scheduled (max 90 days)?
+  monitoring_enabled: false                 # GOV-004: runtime logs/events are captured?
+  policy_violation_visibility: false        # GOV-005: policy violations can be detected and surfaced?
 
 # ── Review ──
 last_review_date:                   # YYYY-MM-DD
