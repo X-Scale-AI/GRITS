@@ -25,7 +25,21 @@ GRITS defines an open, implementable framework for security and lifecycle govern
 - Not a new runtime (use OpenClaw, NemoClaw, or whatever you already run)
 - Not a vendor control plane (GRITS is framework-level, not product-level)
 - Not a certification program (yet)
-- Not a replacement for NIST, OWASP, or ATF (it operationalizes what they recommend)
+- Not a replacement for NIST AI RMF, NIST AI 600-1, OWASP LLM Top 10, or OWASP Agentic Top 10 (it operationalizes what they require but do not prescribe)
+
+## Framework positioning
+
+GRITS sits at the implementation layer beneath NIST and OWASP. Those frameworks name risk categories and direct organizations to apply controls. They do not specify what a passing control looks like at the configuration level for an autonomous agent deployment.
+
+| Framework | What it provides | What it leaves open |
+|---|---|---|
+| NIST AI RMF (AI 100-1) | Governance functions: GOVERN, MAP, MEASURE, MANAGE | No agentic AI coverage; no pass/fail thresholds; voluntary |
+| NIST AI 600-1 (GenAI Profile) | 12 GenAI risk categories; 200+ suggested actions | Content and output focused; no agent network, credential, or tool controls |
+| NIST AI Agent Standards Initiative | Directional research; RFI and concept paper (Feb 2026) | No published technical controls; soliciting industry input |
+| OWASP LLM Top 10 2025 | 10 LLM risk categories with mitigation patterns | Architectural guidance; no enumerated controls with pass/fail expectations |
+| OWASP Agentic Top 10 2026 | 10 agentic-specific risks (ASI01-ASI10) with mitigation guidance | Identifies the threats clearly; still does not specify verifiable control expectations |
+
+GRITS provides what these frameworks require but do not prescribe: 21 controls with layer-specific boundaries, explicit pass/fail expectations, and a governance model that makes compliance auditable. For the complete control-to-framework mapping, see [`docs/nist-owasp-crosswalk.md`](../../docs/nist-owasp-crosswalk.md).
 
 ## Structure
 

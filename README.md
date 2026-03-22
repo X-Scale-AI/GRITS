@@ -55,10 +55,14 @@ Every control in the catalog maps to one or more pillars:
 
 ## Compliance crosswalks
 
-GRITS controls are mapped to:
+All 21 GRITS controls are mapped to:
 
-- NIST AI Risk Management Framework (AI RMF 1.0)
-- OWASP Top 10 for Large Language Model Applications
+- NIST AI Risk Management Framework (AI 100-1)
+- NIST AI 600-1 (Generative AI Profile)
+- OWASP Top 10 for LLM Applications 2025
+- OWASP Top 10 for Agentic Applications 2026 (ASI01-ASI10)
+
+The crosswalk also documents where GRITS provides controls that none of these frameworks yet prescribe at the operational level, and notes planned extensions for EU AI Act, SOC 2, DORA, HIPAA, and FedRAMP.
 
 See [`docs/nist-owasp-crosswalk.md`](docs/nist-owasp-crosswalk.md).
 
