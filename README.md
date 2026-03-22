@@ -2,137 +2,93 @@
 
 **Governance, Risk, Integrity, Trust, Security**
 
-Open-source AI agent security framework. Score your agent's security posture in 5 minutes. Harden it in 15. Built on DoD/DISA zero-trust principles.
+Open-source AI agent security framework. Defines the control catalog, lifecycle model, governance profiles, and compliance mappings for securing AI agents at enterprise scale. Built on DoD/DISA zero-trust principles.
 
-## What this does
+For a ready-to-run implementation, see [grits-agent-scanner](https://github.com/X-Scale-AI/grits-agent-scanner).
 
-GRITS tells you if your AI agent is secure, what is wrong, and how to fix it.
+## What this is
 
-```bash
-# 1. Copy the profile template and fill in your agent's details
-cp profiles/agent-profile-template.yaml my-agent.yaml
+GRITS is the **specification**. It defines what controls AI agents must satisfy, why they exist, and how they map to established standards (NIST AI RMF, OWASP Top 10 for LLM). It is not a tool. It is a standard.
 
-# 2. Score it
-python score/grits-report.py my-agent.yaml
-```
-
-Output:
-
-```
-GRITS Security Report
-
-Agent: My OpenClaw Agent
-Profile: Agent | Runtime: openclaw | Environment: production
-Scored: 2026-03-20
-
-Overall Posture: Critical (20%)
-
-    ████░░░░░░░░░░░░░░░░ 3/15 controls passing
-
-Findings:
-- [CRITICAL] NET-002: Egress restricted to required endpoints
-- [CRITICAL] OPR-001: Operator identity verified
-- [CRITICAL] APP-001: Tool scope declared with deny-by-default
-- [CRITICAL] SEC-001: Secrets isolated from agent filesystem
-...
-
-Scored with GRITS v0.1.0 by X Scale AI
-```
+The [grits-agent-scanner](https://github.com/X-Scale-AI/grits-agent-scanner) is the runnable implementation: scoring, checklists, hardening scripts, and apply guides are there.
 
 ## Who this is for
 
-| If you are... | You probably care about... | GRITS gives you... |
-|---|---|---|
-| running OpenClaw, NemoClaw, or similar agent runtimes | hardening quickly, reducing mistakes, seeing clear gaps | deployment baselines, remediation playbooks, secure defaults, scan/score/remediate workflow |
-| building agents or LLM apps | knowing what controls apply without bureaucracy | Agent Profile, LLM App Profile, ownership rules, lifecycle model, practical defaults |
-| leading platform, governance, or security at scale | ownership, lifecycle, drift, runtime monitoring, recertification | managed-object model, Agent Lifecycle Model, transition gates, runtime signal model, scorecards |
-
-## Quick start
-
-### Option A: Just check your exposure (2 minutes)
-
-Pick the checklist that worries you most:
-
-- [Is your agent network-safe?](checklists/01-network-safety.md)
-- [Can someone else command your agent?](checklists/02-operator-identity.md)
-- [Do you know what your agent can do?](checklists/03-tool-permissions.md)
-- [Are your API keys exposed?](checklists/04-secrets-exposure.md)
-- [Is your agent burning money while you sleep?](checklists/05-cost-exposure.md)
-
-### Option B: Full score and harden (15 to 30 minutes)
-
-See [QUICKSTART.md](QUICKSTART.md) for the complete workflow.
-
-### Option C: Automate host hardening
-
-For Docker hosts:
-
-```bash
-sudo bash tools/harden-docker.sh
-```
-
-For bare-metal or VM hosts:
-
-```bash
-sudo bash tools/harden.sh
-```
-
-Review the configuration section at the top of each script before running. These are production-grade hardening scripts based on CIS Benchmark and DISA STIG standards.
-
-## What is in this repo
-
-| Folder | What it does | Start here if... |
-|---|---|---|
-| `checklists/` | 5 quick yes/no security checks, 2 minutes each | you want a fast gut check |
-| `profiles/` | Profile templates for agents and LLM apps | you want to score your system |
-| `score/` | Scoring scripts that produce JSON and markdown reports | you want a posture score |
-| `apply/openclaw/` | 5-Layer Zero-Trust Hardening Guide for OpenClaw | you run OpenClaw and want to fix things |
-| `apply/nemoclaw/` | Hardening guidance for NemoClaw (expanding) | you run NemoClaw |
-| `tools/` | Host hardening scripts (DoD/DISA grade) | you want automated OS-level hardening |
-| `framework/` | GRITS governance framework (control catalog, lifecycle model) | you want the "why" behind the controls |
+| If you are... | GRITS gives you... |
+|---|---|
+| Building or deploying AI agents | A concrete control catalog to build against |
+| Leading AI governance or security | An auditable standard with compliance crosswalks |
+| Running OpenClaw, NemoClaw, or similar runtimes | The normative baseline the scanner enforces |
+| Evaluating enterprise AI risk | The lifecycle model, profile templates, and NIST/OWASP mappings |
 
 ## The 5-Layer Zero-Trust Model
 
 GRITS secures 5 distinct attack surfaces:
 
-| Layer | Boundary | What GRITS checks |
+| Layer | Boundary | Threat |
 |---|---|---|
-| 1 | Network | Can your agent reach things it should not? |
-| 2 | Operator | Can unauthorized people command your agent? |
-| 3 | Application | Can your agent use tools you did not approve? |
-| 4 | OS / Secrets | Can your agent read your API keys from disk? |
-| 5 | Financial | Is your agent burning your API budget unchecked? |
+| 1 Network | Host firewall / egress policy | Agent scans or attacks local infrastructure |
+| 2 Operator | Identity verification | Unauthorized users command the agent |
+| 3 Application | Tool permissions / filesystem | Agent executes rogue code |
+| 4 OS / Secrets | Credential isolation | Workspace leakage exposes API keys |
+| 5 Financial | Cost containment | Context bloat or idle loops drain budget |
+
+## What is in this repo
+
+| Path | What it contains |
+|---|---|
+| `framework/core/` | Control catalog (21 controls), core principles, pillar definitions |
+| `framework/lifecycle/` | Agent Lifecycle Model: states, transitions, governance gates |
+| `framework/governance/` | Governance profile templates (agent, LLM app) |
+| `profiles/` | Profile templates for scoring and compliance tracking |
+| `docs/` | Reference implementations, compliance crosswalks, domain-specific guidance |
+
+## The 5 GRITS Pillars
+
+Every control in the catalog maps to one or more pillars:
+
+- **Governance** - Ownership, accountability, lifecycle gates
+- **Risk** - Threat modeling, exposure quantification, residual risk
+- **Integrity** - Configuration drift, immutability, audit trail
+- **Trust** - Identity, operator verification, chain of custody
+- **Security** - Technical controls across the 5 layers
+
+## Compliance crosswalks
+
+GRITS controls are mapped to:
+
+- NIST AI Risk Management Framework (AI RMF 1.0)
+- OWASP Top 10 for Large Language Model Applications
+
+See [`docs/nist-owasp-crosswalk.md`](docs/nist-owasp-crosswalk.md).
 
 ## Why GRITS exists
 
-Most "secure your agent" guides tell you to paste a Telegram token and ask the bot to secure itself. That is not security. GRITS gives you:
+NIST AI RMF and OWASP LLM Top 10 define what risk categories matter. They do not prescribe how to implement controls for agentic systems specifically. GRITS is the operational HOW: a control catalog with layer-specific boundaries, a lifecycle model with explicit governance gates, and profile templates that make compliance auditable.
 
-- A concrete security standard with 21 controls across 5 layers
-- Profile templates so you know what to check
-- Scoring tools so you can measure your posture
-- A hardening guide with specific remediation steps
-- Production-grade scripts based on the same standards used in DoD environments
+## Runnable implementation
 
-## The framework beneath
+[grits-agent-scanner](https://github.com/X-Scale-AI/grits-agent-scanner) implements this framework as a scan-score-remediate workflow:
 
-GRITS is built on 5 governance pillars: Governance, Risk, Integrity, Trust, and Security. The control catalog, lifecycle model, and scoring methodology in `framework/` provide the reference specification for teams governing agents at enterprise scale.
-
-For enterprise lifecycle management, fleet governance, and AI Agent SOC capabilities, contact X Scale AI: https://www.xscaleai.com
+- 20 automated checks mapped to GRITS controls
+- Scoring engine that produces posture reports
+- Hardening scripts and runtime-specific apply guides
+- Checklists for quick manual review
 
 ## Contributing
 
-The most useful contributions right now are:
+Useful contributions to the framework:
 
-- Runtime-specific hardening baselines (especially NemoClaw, LangGraph, CrewAI)
-- Checklist translations and adaptations for other agent platforms
-- Security findings and edge cases from real deployments
-- Scoring improvements and additional controls
+- Additional controls for emerging agent architectures
+- Compliance mappings (DORA, SOC 2, HIPAA)
+- Lifecycle model extensions for multi-agent systems
+- Domain-specific profile templates
 
 See [CONTRIBUTING.md](CONTRIBUTING.md) for details.
 
 ## License
 
-Apache 2.0. See [LICENSE](LICENSE).
+Apache 2.0. See [LICENSE](LICENSE) and [NOTICE](NOTICE).
 
 ---
 
