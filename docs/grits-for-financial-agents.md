@@ -39,6 +39,6 @@ Signl (https://signl.markets) is building the reference implementation of GRITS-
 
 ## Status
 
-The financial sector overlay for GRITS is under active development. The base GRITS framework (profiles, scoring, hardening, lifecycle model) applies to financial agents today. Sector-specific controls for data provenance, trade execution governance, and regulatory mapping are planned.
+The financial sector overlay for GRITS is under active development. The base GRITS framework (control catalog, governance profiles, and lifecycle model) applies to financial agents today. Sector-specific controls for data provenance, trade execution governance, and regulatory mapping are planned.
 
 For early access or partnership inquiries: https://www.xscaleai.com

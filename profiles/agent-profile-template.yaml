@@ -1,6 +1,6 @@
 # GRITS Agent Profile Template
 # Copy this file, rename it for your agent, and fill in every field.
-# Then run: python score/grits-security-score.py your-agent.yaml
+# To score this profile, use grits-agent-scanner: https://github.com/X-Scale-AI/grits-agent-scanner
 
 # ── Identity ──
 object_id:                          # unique ID for this agent (e.g., "my-openclaw-agent-01")

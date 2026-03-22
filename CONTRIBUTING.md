@@ -4,11 +4,13 @@ Thanks for helping improve GRITS.
 
 ## What is most useful right now
 
-1. Runtime-specific hardening baselines (NemoClaw, LangGraph, CrewAI, AutoGen)
-2. Security findings and edge cases from real agent deployments
-3. Checklist feedback: what questions are missing, what is unclear
-4. Scoring improvements: controls that should be added, severity adjustments
-5. Profile refinements for specific agent types or platforms
+1. Control catalog extensions: new controls for emerging agent architectures, with normative expectations
+2. Compliance crosswalk extensions: DORA, SOC 2, HIPAA, EU AI Act, FedRAMP mappings
+3. Lifecycle model extensions: multi-agent systems, hierarchical agent fleets, inter-agent trust
+4. Domain-specific profile templates: sector overlays beyond the base agent and LLM app templates
+5. Security findings from real deployments that reveal gaps in the current control catalog
+
+For contributions to scoring, checklists, hardening scripts, or apply guides, see [grits-agent-scanner](https://github.com/X-Scale-AI/grits-agent-scanner).
 
 ## How to contribute
 
