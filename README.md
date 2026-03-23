@@ -24,13 +24,21 @@ The framework is maintained by [X Scale AI](https://www.xscaleai.com), a firm sp
 
 ---
 
-## Two frameworks. One standard.
+## The 5 GRITS Pillars
 
-GRITS is structured around two complementary models that are distinct and work together.
+The pillars are the first principles of the framework. Every control in the catalog must satisfy one or more of these properties or it has no place in the standard. They define the "why" behind every control.
 
-### The 5-Layer Zero-Trust Model
+| Pillar | First principle |
+|---|---|
+| Governance | Every AI system has a named owner, a declared purpose, and a recertification cycle. Accountability is not optional. |
+| Risk | Threats are identified, exposure is quantified, and residual risk is documented before deployment. |
+| Integrity | Configuration is immutable at the point of review. Drift from a certified baseline is detected and surfaced. |
+| Trust | Identity is verified, not assumed. Command authority is explicit, not inherited. |
+| Security | Technical controls are applied at every attack surface. Permissive defaults are rejected. |
 
-Defines **where** controls are applied. Every AI system has 5 attack surfaces that must be governed regardless of autonomy level.
+## The 5-Layer Zero-Trust Model
+
+The layers are the comprehensive coverage model. They define every attack surface an AI system presents, ensuring no exposure is left unaddressed. A control catalog that does not cover all 5 layers has blind spots.
 
 | Layer | Boundary | Threat |
 |---|---|---|
@@ -40,19 +48,7 @@ Defines **where** controls are applied. Every AI system has 5 attack surfaces th
 | 4 OS / Secrets | Credential isolation | API keys exposed through workspace access |
 | 5 Financial | Cost containment | Unbounded token consumption drains budget |
 
-### The 5 GRITS Pillars
-
-Defines **why** each control exists. Every control in the catalog traces back to one or more pillars.
-
-| Pillar | What it governs |
-|---|---|
-| Governance | Ownership, accountability, lifecycle gates |
-| Risk | Threat modeling, exposure quantification, residual risk |
-| Integrity | Configuration drift, immutability, audit trail |
-| Trust | Identity, operator verification, chain of custody |
-| Security | Technical controls across the 5 layers |
-
-The 21 GRITS controls are the intersection: each control specifies a layer (where it applies) and traces to a pillar (why it matters), with an explicit expectation of what passing looks like.
+Every GRITS control traces back to a pillar -- the principle that justifies its existence -- and maps to a layer -- the attack surface it addresses. The 21 controls are the product of that intersection, each with an explicit pass/fail expectation.
 
 ---
 

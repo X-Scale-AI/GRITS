@@ -4,7 +4,11 @@
 
 **G**overnance, **R**isk, **I**ntegrity, **T**rust, **S**ecurity
 
-These are the 5 pillars that every GRITS control traces back to.
+These are the 5 GRITS Pillars -- the first principles of the framework. Every control in the catalog must satisfy one or more of these properties or it has no place in the standard. They establish the "why" behind every control.
+
+The 5-Layer Zero-Trust Model is the complementary coverage model. It defines the distinct attack surfaces every AI system presents -- the "how" of ensuring comprehensive coverage. A control catalog that does not address all 5 layers has blind spots by definition.
+
+Every GRITS control traces back to a pillar (the principle that justifies its existence) and maps to a layer (the attack surface it addresses). The 21 controls are the product of that intersection.
 
 ## Purpose
 
