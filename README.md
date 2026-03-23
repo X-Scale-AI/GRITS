@@ -2,19 +2,23 @@
 
 **Governance, Risk, Integrity, Trust, Security**
 
-AI systems and agents are being deployed faster than security and governance frameworks can address them. GRITS closes that gap.
+GRITS solves tomorrow's AI security problems before they happen.
 
-GRITS is the open standard for AI security and governance. It covers the full spectrum: LLM applications, RAG pipelines, copilots, and fully autonomous agents. It defines 21 controls, a weighted scoring model, a lifecycle governance framework, and compliance mappings to NIST and OWASP -- with explicit pass/fail expectations that those frameworks do not provide.
+Most teams discover their AI governance gaps after something goes wrong: a credential exposed through an agent's filesystem, an unauthorized user commanding a production agent, an API budget drained overnight by an idle loop. GRITS gives you the standard, the controls, and the profile templates to close those gaps before deployment -- not after.
 
-**Start in 5 minutes:** [GRITS Baseline](framework/assessment/grits-baseline.md) -- 5 Critical controls. No tooling required.
+Stop building your governance framework from scratch. Use ours. Go from zero coverage to a scored, documented security posture in hours, not weeks.
 
-**Run automated scans:** [grits-agent-scanner](https://github.com/X-Scale-AI/grits-agent-scanner) -- the full scan-score-remediate implementation.
+GRITS is the open standard for AI security and governance. It covers the full spectrum: LLM applications, RAG pipelines, copilots, and fully autonomous agents. 21 controls across 5 zero-trust layers, a weighted scoring model, a lifecycle governance framework, and compliance mappings to NIST and OWASP -- with explicit pass/fail expectations that those frameworks do not provide.
+
+**Start in 5 minutes:** [GRITS Baseline](framework/assessment/grits-baseline.md) -- the 5 Critical controls every AI system must satisfy before anything else. No tooling required.
+
+**Score and harden:** [grits-agent-scanner](https://github.com/X-Scale-AI/grits-agent-scanner) -- the full scan-score-remediate implementation of this framework.
 
 ---
 
 ## Built by practitioners
 
-GRITS was developed by a team with hands-on backgrounds across AI engineering, enterprise cybersecurity, data architecture, and governance, risk, and compliance (GRC). The control catalog draws directly from DoD/DISA zero-trust principles, CIS Benchmarks, DISA STIGs, NIST AI RMF, and OWASP research. It is not derived from theory. It is derived from what breaks in real deployments.
+GRITS was developed by a team with hands-on backgrounds across AI engineering, enterprise cybersecurity, data architecture, and governance, risk, and compliance (GRC). The control catalog is grounded in DoD/DISA zero-trust principles, CIS Benchmarks, DISA STIGs, NIST AI RMF, and OWASP research. It is not derived from theory. It is derived from what breaks in real deployments.
 
 The framework is maintained by [X Scale AI](https://www.xscaleai.com), a firm specializing in AI security architecture and enterprise AI governance.
 
@@ -48,7 +52,7 @@ Defines **why** each control exists. Every control in the catalog traces back to
 | Trust | Identity, operator verification, chain of custody |
 | Security | Technical controls across the 5 layers |
 
-The 21 GRITS controls are the intersection: each control specifies a layer (where) and traces to a pillar (why), with an explicit expectation of what passing looks like.
+The 21 GRITS controls are the intersection: each control specifies a layer (where it applies) and traces to a pillar (why it matters), with an explicit expectation of what passing looks like.
 
 ---
 
@@ -65,9 +69,20 @@ GRITS applies to any system where an AI model interacts with data, tools, users,
 
 ---
 
+## Time to coverage
+
+| Path | What you get | Time |
+|---|---|---|
+| [GRITS Baseline](framework/assessment/grits-baseline.md) | 5 Critical controls checked, highest-severity gaps closed | 5 minutes |
+| [Agent profile](profiles/agent-profile-template.yaml) + manual score | Full 21-control posture score, documented and auditable | 1-2 hours |
+| [grits-agent-scanner](https://github.com/X-Scale-AI/grits-agent-scanner) | Automated scan, posture report, remediation guidance | Under 30 minutes |
+| Enterprise deployment | Fleet governance, lifecycle enforcement, AI Agent SOC | [Contact X Scale AI](https://www.xscaleai.com/consult) |
+
+---
+
 ## Declare your posture
 
-Score your system against the 21 controls and declare the result. Add a badge to your repo:
+Score your system and declare the result. Add a badge to your repo:
 
 ```markdown
 ![GRITS Score](https://img.shields.io/badge/GRITS-87%25%20Strong-green)
@@ -84,7 +99,7 @@ Replace `87%25%20Strong` with your score and band. Badge colors by posture:
 | Poor | 20-39% | `orange` |
 | Critical | 0-19% | `red` |
 
-Scoring methodology: [`framework/assessment/scoring-methodology.md`](framework/assessment/scoring-methodology.md)
+Scoring spec: [`framework/assessment/scoring-methodology.md`](framework/assessment/scoring-methodology.md)
 
 ---
 
@@ -93,7 +108,7 @@ Scoring methodology: [`framework/assessment/scoring-methodology.md`](framework/a
 | Path | What it contains |
 |---|---|
 | `framework/core/` | Control catalog (21 controls), principles, pillar definitions |
-| `framework/lifecycle/` | Agent Lifecycle Model: states, transitions, governance gates |
+| `framework/lifecycle/` | AI System and Agent Lifecycle Model: states, transitions, governance gates |
 | `framework/assessment/` | Scoring methodology, posture bands, lifecycle gate thresholds, GRITS Baseline |
 | `profiles/` | Profile templates for AI systems and agents, with 21 checks aligned to the catalog |
 | `docs/` | Compliance crosswalks, domain-specific guidance, reference architectures |
