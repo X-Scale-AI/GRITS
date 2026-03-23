@@ -2,28 +2,17 @@
 
 **Governance, Risk, Integrity, Trust, Security**
 
-Open-source AI agent security framework. Defines the control catalog, lifecycle model, governance profiles, and compliance mappings for securing AI agents at enterprise scale. Built on DoD/DISA zero-trust principles.
+You are deploying AI agents. No one has told you what "secure" looks like for them. GRITS does.
 
-For a ready-to-run implementation, see [grits-agent-scanner](https://github.com/X-Scale-AI/grits-agent-scanner).
+GRITS is the open standard for AI agent security and governance. It defines 21 controls across 5 zero-trust layers, a lifecycle model with explicit governance gates, and compliance mappings to NIST AI RMF, NIST AI 600-1, OWASP LLM Top 10 2025, and OWASP Agentic Top 10 2026. Built on DoD/DISA zero-trust principles.
 
-## What this is
+**Start in 5 minutes:** [GRITS Baseline](framework/assessment/grits-baseline.md) -- the 5 Critical controls every agent must satisfy before anything else.
 
-GRITS is the **specification**. It defines what controls AI agents must satisfy, why they exist, and how they map to established standards (NIST AI RMF, OWASP Top 10 for LLM). It is not a tool. It is a standard.
+**Run automated scans:** [grits-agent-scanner](https://github.com/X-Scale-AI/grits-agent-scanner) -- the full scan-score-remediate implementation of this framework.
 
-The [grits-agent-scanner](https://github.com/X-Scale-AI/grits-agent-scanner) is the runnable implementation: scoring, checklists, hardening scripts, and apply guides are there.
-
-## Who this is for
-
-| If you are... | GRITS gives you... |
-|---|---|
-| Building or deploying AI agents | A concrete control catalog to build against |
-| Leading AI governance or security | An auditable standard with compliance crosswalks |
-| Running OpenClaw, NemoClaw, or similar runtimes | The normative baseline the scanner enforces |
-| Evaluating enterprise AI risk | The lifecycle model, profile templates, and NIST/OWASP mappings |
+---
 
 ## The 5-Layer Zero-Trust Model
-
-GRITS secures 5 distinct attack surfaces:
 
 | Layer | Boundary | Threat |
 |---|---|---|
@@ -33,19 +22,51 @@ GRITS secures 5 distinct attack surfaces:
 | 4 OS / Secrets | Credential isolation | Workspace leakage exposes API keys |
 | 5 Financial | Cost containment | Context bloat or idle loops drain budget |
 
+21 controls. 5 layers. Explicit pass/fail expectations for each.
+
+## Declare your posture
+
+Once you have scored your agent, add a badge to your repo:
+
+```markdown
+![GRITS Score](https://img.shields.io/badge/GRITS-87%25%20Strong-green?logo=data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNCAyNCI+PHBhdGggZmlsbD0id2hpdGUiIGQ9Ik0xMiAyTDMgN3YxMGw5IDUgOS01VjdsLTktNXoiLz48L3N2Zz4=)
+```
+
+Replace `87%25%20Strong` with your score and band. Badge colors:
+
+| Posture band | Score | Badge color |
+|---|---|---|
+| Exemplary | 90-100% | `brightgreen` |
+| Strong | 75-89% | `green` |
+| Adequate | 60-74% | `yellowgreen` |
+| Developing | 40-59% | `yellow` |
+| Poor | 20-39% | `orange` |
+| Critical | 0-19% | `red` |
+
+See [`framework/assessment/scoring-methodology.md`](framework/assessment/scoring-methodology.md) for the full scoring spec.
+
+## Who this is for
+
+| If you are... | GRITS gives you... |
+|---|---|
+| Building or deploying AI agents | A concrete control catalog with pass/fail expectations to build against |
+| Leading AI governance or security | An auditable standard with crosswalks to NIST and OWASP |
+| Running OpenClaw, NemoClaw, or similar runtimes | The normative baseline the scanner enforces |
+| Evaluating enterprise AI risk | The lifecycle model, profile templates, and compliance mappings |
+
 ## What is in this repo
 
 | Path | What it contains |
 |---|---|
 | `framework/core/` | Control catalog (21 controls), core principles, pillar definitions |
 | `framework/lifecycle/` | Agent Lifecycle Model: states, transitions, governance gates |
-| `framework/assessment/` | Scoring methodology: control weights, posture bands, lifecycle gate thresholds |
+| `framework/assessment/` | Scoring methodology, posture bands, lifecycle gate thresholds, GRITS Baseline |
 | `profiles/` | Profile templates with 21 checks aligned to the control catalog |
 | `docs/` | Reference implementations, compliance crosswalks, domain-specific guidance |
 
 ## The 5 GRITS Pillars
 
-Every control in the catalog maps to one or more pillars:
+Every control maps to one or more pillars:
 
 - **Governance** - Ownership, accountability, lifecycle gates
 - **Risk** - Threat modeling, exposure quantification, residual risk
@@ -62,29 +83,14 @@ All 21 GRITS controls are mapped to:
 - OWASP Top 10 for LLM Applications 2025
 - OWASP Top 10 for Agentic Applications 2026 (ASI01-ASI10)
 
-The crosswalk also documents where GRITS provides controls that none of these frameworks yet prescribe at the operational level, and notes planned extensions for EU AI Act, SOC 2, DORA, HIPAA, and FedRAMP.
-
-See [`docs/nist-owasp-crosswalk.md`](docs/nist-owasp-crosswalk.md).
-
-## Why GRITS exists
-
-NIST AI RMF and OWASP LLM Top 10 define what risk categories matter. They do not prescribe how to implement controls for agentic systems specifically. GRITS is the operational HOW: a control catalog with layer-specific boundaries, a lifecycle model with explicit governance gates, and profile templates that make compliance auditable.
-
-## Runnable implementation
-
-[grits-agent-scanner](https://github.com/X-Scale-AI/grits-agent-scanner) implements this framework as a scan-score-remediate workflow:
-
-- 20 automated checks mapped to GRITS controls
-- Scoring engine that produces posture reports
-- Hardening scripts and runtime-specific apply guides
-- Checklists for quick manual review
+GRITS provides what these frameworks require but do not prescribe: controls with explicit pass/fail expectations and a scoring model that makes compliance auditable. See [`docs/nist-owasp-crosswalk.md`](docs/nist-owasp-crosswalk.md).
 
 ## Contributing
 
 Useful contributions to the framework:
 
 - Additional controls for emerging agent architectures
-- Compliance mappings (DORA, SOC 2, HIPAA)
+- Compliance mappings (DORA, SOC 2, HIPAA, EU AI Act)
 - Lifecycle model extensions for multi-agent systems
 - Domain-specific profile templates
 
