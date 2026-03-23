@@ -56,6 +56,25 @@ The 21 GRITS controls are the intersection: each control specifies a layer (wher
 
 ---
 
+## Who this is for
+
+**Enterprise GRC teams** are being asked to demonstrate AI governance maturity without a standard to build against. GRITS gives them a citable control catalog, a profile that produces an auditable governance record, and a lifecycle model with enforceable gates -- so when the auditor asks, the answer exists.
+
+**CISO and security teams** are inheriting an attack surface they cannot fully see: agents with network access, credentials on filesystems, tool permissions broader than necessary, and no detection signal in existing SIEM workflows. GRITS closes the exposure paths with layer-specific controls and creates the monitoring mandate that feeds security operations.
+
+**Builders and platform teams** deploying LLM apps, RAG pipelines, or autonomous agents get a concrete baseline to build against, profile templates that require no custom documentation, and a scored posture they can declare and track.
+
+| Role | Primary GRITS value |
+|---|---|
+| GRC / Risk / Compliance | Citable standard, auditable profile, lifecycle enforcement, board-reportable score |
+| CISO / Security | Layer-specific controls, risk-prioritized scoring, monitoring mandate, containment model |
+| AI / Platform engineering | Pass/fail expectations, ready-made profile templates, scanner integration |
+| Executive / Board | Fleet posture visibility, ownership accountability, regulator alignment |
+
+See [`docs/grits-for-enterprise.md`](docs/grits-for-enterprise.md) for the full GRC and CISO breakdown. See [`docs/agent-soc-reference.md`](docs/agent-soc-reference.md) for the AI Agent SOC architecture.
+
+---
+
 ## What GRITS covers
 
 GRITS applies to any system where an AI model interacts with data, tools, users, or infrastructure.
