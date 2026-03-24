@@ -37,37 +37,23 @@ GRITS provides the foundational data model and signal vocabulary that an AI Agen
 |---|---|
 | Agent and system profiles | Fleet inventory: what systems exist, who owns them, what they are authorized to do |
 | Lifecycle Model | State tracking: which systems are in production, test, suspended, or retired |
-| Security posture scores | Risk prioritization: which systems have the weakest posture and need attention first |
-| GOV-004: Monitoring required | Runtime signal mandate: telemetry must exist for SOC consumption |
-| GOV-005: Policy violation visibility | Detection requirement: violations must be surfaced, not just logged |
-| Recertification dates | Compliance tracking: which systems are due for review, which have lapsed |
-| Lifecycle transition gates | Change management: what approvals are required before promotion or scope change |
-| Suspended and Restricted states | Containment model: defined states for incident response and remediation |
+| Security posture scores | Risk prioritization: which systems need attention first |
+| Monitoring and visibility controls | Runtime signal mandate and policy violation surfacing |
+| Recertification dates | Compliance tracking: systems due for review or lapsed |
+| Lifecycle transition gates | Change management: approvals required before promotion or scope change |
+| Containment states | Defined states for incident response and remediation |
 
 ---
 
-## SOC operating model
-
-| Function | Description |
-|---|---|
-| Agent Discovery | Identify all AI systems and agents in the environment, including systems not in the registry |
-| Posture Monitoring | Continuously score posture against GRITS controls and flag degradation |
-| Drift Detection | Compare current configuration and behavior against the last certified baseline |
-| Incident Response | Investigate and remediate AI-related security events: credential exposure, scope violation, cost overrun, rogue behavior |
-| Lifecycle Enforcement | Ensure systems follow governance gates for promotion, suspension, and retirement |
-| Fleet Reporting | Aggregate posture, risk, and compliance data across the full AI system population |
-
----
-
-## The CISO mandate
+## The GRITS Governance Gate
 
 A CISO implementing AI governance through GRITS establishes three things before any agent reaches production:
 
-1. **A declared posture** -- every AI system has a profile, a score, and a named owner before it is promoted to production. The score must meet the lifecycle gate threshold for the system's autonomy and impact tier.
+1. **Declared posture** -- every AI system has a profile, a score, and a named owner before it is promoted to production.
 
-2. **A monitoring requirement** -- GOV-004 and GOV-005 are not optional for production systems. Monitoring must be active and policy violations must be detectable. This is the signal that feeds SOC workflows.
+2. **Active monitoring** -- monitoring must be active and policy violations must be detectable for all production systems.
 
-3. **A containment model** -- the Suspended and Restricted lifecycle states define what happens when a system is compromised or drifts. Incident response starts with a defined state transition, not an ad hoc decision.
+3. **Containment model** -- defined lifecycle states govern what happens when a system is compromised or drifts. Incident response starts with a state transition, not an ad hoc decision.
 
 These three things give a CISO the ability to answer the board and the regulator: what AI systems are running, what posture they are in, and what happens when something goes wrong.
 
@@ -77,7 +63,7 @@ These three things give a CISO the ability to answer the board and the regulator
 
 The GRITS framework provides the open specification: the profile schema, lifecycle states, control catalog, scoring methodology, and signal vocabulary. Any organization can use these to build internal AI governance.
 
-The AI Agent SOC implementation -- including fleet-scale monitoring dashboards, automated drift detection, orphan agent discovery, recertification alerting, and SIEM integration -- is available as an enterprise capability through X Scale AI.
+Fleet-scale operationalization of these controls -- continuous posture visibility, automated compliance workflows, and integrated incident response across large agent populations -- is available as an enterprise capability through X Scale AI.
 
 Branded as **AgentTrust**, powered by the GRITS framework.
 
